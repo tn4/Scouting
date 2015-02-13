@@ -1,0 +1,49 @@
+
+package scounting;
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author s632318
+ */
+public class DataTransfer
+{
+    ArrayList<Integer> matches = new ArrayList<Integer>();
+    ArrayList<Integer> red_one = new ArrayList<Integer>();
+    ArrayList<Integer> red_two = new ArrayList<Integer>();
+    ArrayList<Integer> red_three = new ArrayList<Integer>();
+    ArrayList<Integer> blue_one = new ArrayList<Integer>();
+    ArrayList<Integer> blue_two = new ArrayList<Integer>();
+    ArrayList<Integer> blue_three = new ArrayList<Integer>();
+    //Form setup = new Form();
+
+    public void Read() throws FileNotFoundException
+    {
+        System.out.println("Data loaded");
+        Scanner match = new Scanner(new File("C:\\Users\\Toan Nguyen\\Desktop\\Scout\\Schedule.txt"));
+        while(match.hasNext())
+        {
+            
+            matches.add(Integer.valueOf(match.next()));
+            
+            red_one.add(Integer.valueOf(match.next()));
+            red_two.add(Integer.valueOf(match.next()));
+            red_three.add(Integer.valueOf(match.next()));
+            System.out.println(red_one);
+            blue_one.add(Integer.valueOf(match.next()));
+            blue_two.add(Integer.valueOf(match.next()));
+            blue_three.add(Integer.valueOf(match.next()));
+        }
+
+    }
+}
