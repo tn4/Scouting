@@ -1,0 +1,246 @@
+
+package scounting;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTextField;
+
+public class Form extends javax.swing.JFrame
+{
+
+    public Form()
+    {
+        try {
+            data.Read();
+        } catch (FileNotFoundException ex) {}
+        initComponents();
+       
+    }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+
+        jButton1.setText("Load");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Red");
+
+        jLabel2.setText("Blue");
+
+        jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField7FocusLost(evt);
+            }
+        });
+
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jLabel1)
+                .addGap(45, 45, 45)
+                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(66, 66, 66))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                        .addComponent(jTextField3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton2))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>                        
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        //auto_practice, if true then do the auto reload
+        System.out.println("load");
+        System.out.println(auto_practice);
+        
+        if(auto_practice)
+        {
+            //System.out.println(data.red_one.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText()))));
+            //System.out.println("asd " + data.red_one.get(data.matches.get((int)jTextField7.getText())));
+            
+            jTextField1.setText(String.valueOf(data.red_one.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            jTextField2.setText(String.valueOf(data.red_two.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            jTextField3.setText(String.valueOf(data.red_three.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            
+            //load the blue alliance
+            jTextField4.setText(String.valueOf(data.blue_one.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            jTextField5.setText(String.valueOf(data.blue_two.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            jTextField6.setText(String.valueOf(data.blue_three.get(data.matches.indexOf(Integer.parseInt(jTextField7.getText())))));
+            //set the value
+            
+            if(!jTextField1.getText().isEmpty() ||!jTextField2.getText().isEmpty() || !jTextField3.getText().isEmpty()  || !jTextField4.getText().isEmpty()
+                  || !jTextField5.getText().isEmpty()  || !jTextField6.getText().isEmpty())
+            {
+                System.out.println("Auto Loaded, Inilizing the value");
+                current_team1 = Integer.valueOf(jTextField1.getText());
+                current_team2 = Integer.valueOf(jTextField2.getText());
+                current_team3 = Integer.valueOf(jTextField3.getText());
+                current_team4 = Integer.valueOf(jTextField4.getText());
+                current_team5 = Integer.valueOf(jTextField5.getText());
+                current_team6 = Integer.valueOf(jTextField6.getText());
+            }
+                   
+        }
+        else
+        {
+            System.out.println("Manuel Loaded, getting value");
+            //set the current team to team whoever they wrote
+            if(!jTextField1.getText().isEmpty())
+            {
+                current_team1 = Integer.parseInt(jTextField1.getText());
+            }
+            else
+            {
+                current_team1 = 0;
+            }
+            if(!jTextField2.getText().isEmpty())
+            {
+                current_team2 = Integer.parseInt(jTextField2.getText());
+            }
+            else
+            {
+                current_team2 = 0;
+            }
+            if(!jTextField3.getText().isEmpty())
+            {
+                current_team3 = Integer.parseInt(jTextField3.getText());
+            }
+            else
+            {
+                current_team3 = 0;
+            }
+            if(!jTextField4.getText().isEmpty())
+            {
+                current_team4 = Integer.parseInt(jTextField4.getText());
+            }
+            else
+            {
+                current_team4 = 0;
+            }
+            if(!jTextField5.getText().isEmpty())
+            {
+                current_team5 = Integer.parseInt(jTextField5.getText());
+            }
+            else
+            {
+                current_team5 = 0;
+            }
+            if(!jTextField6.getText().isEmpty())
+            {
+                current_team6 = Integer.parseInt(jTextField6.getText());
+            }
+            else
+            {
+                current_team6 = 0;
+            }
+        }
+                
+    }                                        
+
+    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {                                      
+       if(!jTextField1.getText().isEmpty())
+       {
+            auto_practice = true;
+            System.out.println(auto_practice);
+       }
+    }                                     
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        System.out.println("back");
+        setVisible(false);
+    }                                        
+
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    // End of variables declaration                   
+    public boolean auto_practice = false;
+    DataTransfer data = new DataTransfer();
+    int current_team1= 0;
+    int current_team2= 0;
+    int current_team3= 0;
+    int current_team4= 0;
+    int current_team5= 0;
+    int current_team6= 0;
+
+}
