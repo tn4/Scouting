@@ -1,0 +1,138 @@
+package scounting;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+class Graphical extends JPanel
+{
+  //Colo colors = new Colo();
+  //Color color = Color.BLACK;
+  private Image img;
+  boolean background = false;
+  boolean pencil = false;
+  boolean erase = false;
+  int x,y,tempx,tempy = 0;
+  
+  public Graphical()
+  {
+
+  }
+  public Graphical(String img) 
+  {
+    this(new ImageIcon(img).getImage());
+  }
+  
+  public Graphical(Image img)
+  {
+    //System.out.println("CONSTRUCTOR");
+    SetMouse();
+    this.img = img;
+    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
+    setPreferredSize(size);
+    setMinimumSize(size);
+    setMaximumSize(size);
+    setSize(size);
+    setLayout(null);
+  }
+  public void SetMouse()
+  {
+    addMouseListener(new MouseAdapter()
+        {
+            public void mousePressed(MouseEvent e)
+            {
+                SetXY(e.getX(), e.getY());
+                //System.out.println(e.getX(), e.getY());
+                //System.out.println(e.getX() +" , "+ e.getY());
+            }
+        });
+
+    addMouseMotionListener(new MouseAdapter()
+        {
+            public void mouseDragged(MouseEvent e)
+            {
+               SetXY(e.getX(), e.getY());
+               // System.out.println(e.getX(), e.getY());
+               //System.out.println(e.getX()+" , "+e.getY());
+
+            }
+        });
+  }
+   public void SetXY(int x , int y )
+    {
+        
+        this.x = x;
+        this.y = y;
+        
+        if(pencil == false)
+        {     
+            tempx = x;
+            tempy = y;           
+        }
+       //repaint();
+       repaint(x, y, 5, 5);
+       tempx = x;
+       tempy = y;
+       
+       repaint(x, y, 5, 5);
+       //repaint();
+    }
+   /*
+   public void SetColor(Color color)
+   {
+        colors.GetColor();
+   }
+
+    *
+    */
+
+  public void paintComponent(Graphics g) 
+  {
+   // g.setColor(colors.GetColor());
+   // System.out.println(colors.GetColorRed());
+    //System.out.println(Colo.GetColorRed()+" "+Colo.GetColorGreen()+ " " + Colo.GetColorBlue());
+    System.out.println(""+ Colo.color.getRed());
+      //super.paintComponents(g);
+    if(background == false)
+    {
+       g.drawImage(img, 0, 0, null);
+       background = false;
+    }
+    //g.drawLine(x, y, tempx, tempy);
+    /*
+    g.setColor(Color.BLACK);
+    g.drawOval(x, y, 5, 5);
+    g.fillOval(x, y, 5, 5);
+    pencil = true;
+    tempx = x;
+    tempy = y;
+    g.drawOval(x, y, 5, 5);
+    g.fillOval(x, y, 5, 5);
+    */
+    /*
+    if(erase == false)
+    {
+        g.setColor(Color.BLACK);
+ 
+    }
+    else
+    {
+        g.setColor(Color.BLACK);
+    }
+     * 
+     */
+    g.drawOval(x, y, 5, 5);
+    g.fillOval(x, y, 10, 10);
+  }
+
+   
+
+}
