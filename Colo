@@ -1,0 +1,52 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package scounting;
+
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
+public class Colo 
+{
+    public static Color color;
+    public static int code = 0;
+    JPanel panel = new JPanel();
+    String file = "C:\\Users\\s632318\\Desktop\\Scouting.png";
+    
+    public Colo()
+    {
+        color = Color.BLACK;
+        this.panel = new Graphical(new ImageIcon(file).getImage());
+    }
+    public void SetPanel(JPanel panel)
+    {
+        this.panel = panel;
+    }
+    public JPanel GetPanel()
+    {
+        return panel;
+    }
+    public void SetColor(Color color)
+    {
+        
+        color = new Color(color.getRed(),color.getGreen(),color.getBlue());
+        System.out.println("Color Value =  " + color);
+        
+    }
+    public  int GetColorRed()
+    {
+        return color.getRed();
+    }
+    public  int GetColorBlue()
+    {
+        return color.getBlue();
+    }
+    public  int GetColorGreen()
+    {
+        return color.getGreen();
+    }
+
+}
